@@ -1,0 +1,194 @@
+1.HTML: SLIDESHOW
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="slideshow">
+        <div class="slide fade">
+            <img src="dog1.jpg" alt="Image 1" width="500px" height="700px">
+        </div>
+        <div class="slide fade">
+            <img src="dog2" alt="Image 2" width="500px" height="700px">
+        </div>
+        <div class="slide fade">
+            <img src="dog3" alt="Image 3" width="500px" height="700px">
+        </div>
+        <div class="slide fade">
+            <img src="dog4.jpg" alt="Image 4" width="500px" height="700px">
+        </div>
+    </div>
+    <script src="index2.js"></script>
+</body>
+
+</html>
+
+CSS:SLIDESHOW
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 100px;
+    padding: 0;
+}
+
+/* Styles for the slideshow */
+.slideshow {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+   
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+JS:SLIDESHOW
+document.addEventListener('DOMContentLoaded', function() {
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.getElementsByClassName('slide');
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+});
+
+2.HTML:THUMBNAIL
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="gallery">
+        <img src="dog1.jpg" alt="Image 1" class="thumbnail">
+        <img src="dog2" alt="Image 2" class="thumbnail">
+        <img src="dog3" alt="Image 3" class="thumbnail">
+        <img src="dog4.jpg" alt="Image 4" class="thumbnail">
+    </div>
+    <div class="modal" id="modal">
+        <span class="close" id="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+CSS:THUMBNAIL
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.thumbnail {
+    width: 725px;
+    height: 400px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+JS:THUMBNAIL
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const close = document.getElementById('close');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modalImg.src = this.src;
+        });
+    });
+
+    close.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
