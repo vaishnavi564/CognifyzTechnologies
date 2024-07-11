@@ -1,0 +1,159 @@
+HTML;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developer Internship - Cognifyz Technologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Web Developer Internship Opportunities at Cognifyz Technologies</h1>
+    </header>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>Cognifyz Technologies is a leading technology company that
+        specializes in the dynamic field of data science and excels in
+        delivering impactful projects and solutions.</p>
+            <p>Join our dynamic team and gain hands-on experience in web development with our comprehensive internship
+            program. This 1-month internship offers an immersive learning experience in a real-world setting, helping
+            you to enhance your skills and build your career.</p>
+    </section>
+
+    <section id="highlights">
+        <h2>Highlights</h2>
+        <ul>
+            <li><strong>Real-World Experience:</strong> Work on live projects and contribute to real solutions.</li>
+            <li><strong>Mentorship:</strong> Receive guidance and feedback from experienced developers.</li>
+            <li><strong>Networking:</strong> Connect with industry professionals and expand your professional network.
+            </li>
+            <li><strong>Career Growth:</strong> Opportunity for full-time employment upon successful completion of the
+                internship.</li>
+        </ul>
+    </section>
+
+    <section id="qualifications">
+        <h2>Qualifications</h2>
+        <ul>
+            <li><strong>Technical Skills:</strong> Proficiency in HTML, CSS, and JavaScript.</li>
+            <li><strong>Framework Knowledge:</strong> Familiarity with front-end frameworks like React or Angular.</li>
+            <li><strong>Back-End Basics:</strong> Basic understanding of back-end technologies such as Node.js and
+                Express.</li>
+            <li><strong>Problem-Solving:</strong> Strong analytical and problem-solving skills.</li>
+            <li><strong>Team Player:</strong> Ability to work well in a team environment.</li>
+        </ul>
+    </section>
+
+    <section id="cta">
+        <a href="#" class="apply-button">Apply Now</a>
+    </section>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Address: Nagpur, Maharashtra</p>
+        <p>Email: <a href="mailto:cognifyztechnologies@gmail.com">cognifyztechnologies@gmail.com</a></p>
+    </footer>
+</body>
+
+</html>
+
+CSS;
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(rgb(155, 81, 224) 0%,rgba(81, 35, 94, 0.992)) ;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+section {
+    padding: 3rem 2rem;
+    background:linear-gradient(rgb(190, 167, 211)0%,rgb(211, 189, 214));
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: rgb(155, 81, 224);
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgb(155, 81, 224) 100%;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 2rem auto;
+    display: block;
+    width: fit-content;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.apply-button:hover {
+    background:rgb(155, 81, 224) 100%;
+    transform: scale(1.05);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+a {
+    color: rgb(155, 81, 224);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgb(155, 81, 224) 100%;
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 4rem 5rem;
+        margin: 2rem auto;
+        max-width: 800px;
+    }
+}
